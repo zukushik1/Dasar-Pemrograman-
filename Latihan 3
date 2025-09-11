@@ -1,0 +1,20 @@
+
+
+#INPUT DATA SISWA
+print('----------------')
+print('input data siswa')
+print('----------------')
+nisn = input('Masukkan Nisn : ')
+nama = input('Masukkan Nama : ')
+kelas = input('Masukkan Kelas : ')
+alamat = input('Masukkan Alamat : ')
+
+print(' ')
+#OUTPUT DATA SISWA
+print('----------------')
+print('output data siswa')
+print('----------------')
+print('nisn yang diinput adalah :', nisn)
+print('nama yang diinput adalah :', nama)
+print('kelas yang diinput adalah :', kelas)
+print('alamat yang diinput adalah :', alamat)
