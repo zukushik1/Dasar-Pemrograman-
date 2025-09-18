@@ -1,0 +1,5 @@
+#List Saya
+my_list =[1, "pucuk ubi", 3.14]
+my_list[1] = "pucuk kangkung" # Mengubah elemen
+my_list.append(4)                      # Mengubah elemen
+print(my_list) # Output: [1, 'pucuk kangkung', 3.14, 4]
