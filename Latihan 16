@@ -1,0 +1,6 @@
+# Latihan conditional 1
+late = False
+if late:
+	print('jika saya terlambat saya kenak hukum oleh wali kelas') #1
+else:
+	print('jika saya tidak terlambat saya tidak kenak hukum oleh wali kelas') #2
