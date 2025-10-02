@@ -1,0 +1,14 @@
+# Program menentukan nilai huruf
+
+nilai = int(input("Masukkan nilai: "))
+
+if nilai >= 91 and nilai <= 100:
+    grade = "A"
+elif nilai >= 81 and nilai <= 90:
+    grade = "B"
+elif nilai >= 75 and nilai <= 80:
+    grade = "C"
+else:
+    grade = "D"
+
+print("Nilai huruf kamu adalah:", grade)
