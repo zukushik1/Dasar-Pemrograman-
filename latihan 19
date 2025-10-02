@@ -1,0 +1,13 @@
+# Program menghitung diskon belanja
+
+uangan = int(input("berapa belanjamu: "))
+
+if belanja >= 1000000:
+    diskon = 25 / 100
+elif belanja >= 500000:
+    diskon = 10 / 100
+else:
+    diskon = 0
+
+bayar = uangan - (uangan * diskon)
+print("kamu membayar", bayar)
