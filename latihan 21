@@ -1,0 +1,9 @@
+surnames = ['Isal', 'samsul', 'leo',]
+for position in range (len(surnames)):
+	print (position, surnames [position])
+	
+	print("----------------------")
+	
+surnames = ['Isal', 'samsul', 'leo',]
+for surnames in surnames:
+	print (surnames)
