@@ -1,0 +1,8 @@
+# multiple.sequences.implicit.py
+people = ['jeri', 'siti', 'andre', 'andreana']
+ages = [16, 30, 34, 36]
+nationalities = ['Jepang', 'India', 'South Africa', 'jawa']
+
+for data in zip(people, ages, nationalities):
+    person, age, nationality = data
+    print(person, age, nationality)	
