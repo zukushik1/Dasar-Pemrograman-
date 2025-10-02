@@ -1,0 +1,7 @@
+n = 39
+pengingat = []
+while n > 0:
+	pengingats = n % 2
+	pengingat.insert(0, pengingats)
+	n //= 2
+print(pengingat)
