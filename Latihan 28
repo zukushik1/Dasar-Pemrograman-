@@ -1,0 +1,15 @@
+def hitung_rata(nilai1, nilai2, nilai3):
+    return (nilai1 + nilai2 + nilai3) / 3
+def tampilkan_hasil(nilai_akhir):
+    print("Nilai rata-rata kamu adalah:", nilai_akhir)
+    if nilai_akhir >= 75:
+        print("Kamu dinyatakan LULUS!")
+    else:
+        print("Kamu dinyatakan TIDAK LULUS.")
+# Program utama
+print("=== Program Penilaian Rata-Rata ===")
+n1 = float(input("Masukkan nilai 1: "))
+n2 = float(input("Masukkan nilai 2: "))
+n3 = float(input("Masukkan nilai 3: "))
+rata = hitung_rata(n1, n2, n3)
+tampilkan_hasil(rata)
