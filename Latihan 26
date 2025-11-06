@@ -1,0 +1,14 @@
+#Penjumlahan
+def jumlah(a, b):
+    hasil = a + b
+    return hasil
+
+#Perkalian
+def kali(a, b):
+    hasil = a * b
+    return hasil
+x = int(input("Masukkan angka pertama: "))
+y = int(input("Masukkan angka kedua: "))
+print("==============================")
+print("Hasil penjumlahan:", jumlah(x, y))
+print("Hasil perkalian:", kali(x, y))
