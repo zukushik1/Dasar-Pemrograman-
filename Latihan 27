@@ -1,0 +1,4 @@
+def tampilkan_pesan(nama):
+    print("Selamat datang,", nama, "di kelas Python!")
+# Program utama
+tampilkan_pesan("Andi")
