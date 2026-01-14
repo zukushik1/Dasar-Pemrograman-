@@ -1,0 +1,17 @@
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+  def greet(self):
+    return "Hello, " + self.name
+
+  def welcome(self):
+    message = self.greet()
+    print(message + f"! You Are {self.age} years old . Welcome to our website.")
+
+name = input ("masukkan nama kamu: ")
+age = input ("masukkan umur kamu: ")
+ 
+p1 = Person(name, age)
+p1.welcome()
