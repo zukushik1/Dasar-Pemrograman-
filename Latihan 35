@@ -1,0 +1,137 @@
+# =========================
+# CLASS DASAR
+# =========================
+
+class Bentuk:
+    def __init__(self, nama):
+        self.nama = nama
+
+    def hitung_luas(self):
+        raise NotImplementedError("Subclass harus implementasi ini")
+
+    def hitung_keliling(self):
+        raise NotImplementedError("Subclass harus implementasi ini")
+
+    def info(self):
+        return f"Bentuk: {self.nama}"
+
+
+class Persegi(Bentuk):
+    def __init__(self, sisi):
+        super().__init__("Persegi")
+        self.sisi = sisi
+
+    def hitung_luas(self):
+        return self.sisi * self.sisi
+
+    def hitung_keliling(self):
+        return 4 * self.sisi
+
+    def info(self):
+        return f"{super().info()} dengan sisi {self.sisi} cm"
+
+
+class PersegiPanjang(Bentuk):
+    def __init__(self, panjang, lebar):
+        super().__init__("Persegi Panjang")
+        self.panjang = panjang
+        self.lebar = lebar
+
+    def hitung_luas(self):
+        return self.panjang * self.lebar
+
+    def hitung_keliling(self):
+        return 2 * (self.panjang + self.lebar)
+
+    def info(self):
+        return f"{super().info()} dengan panjang {self.panjang} cm dan lebar {self.lebar} cm"
+
+
+class Lingkaran(Bentuk):
+    def __init__(self, jari_jari):
+        super().__init__("Lingkaran")
+        self.jari_jari = jari_jari
+
+    def hitung_luas(self):
+        return 3.14 * self.jari_jari ** 2
+
+    def hitung_keliling(self):
+        return 2 * 3.14 * self.jari_jari
+
+    def info(self):
+        return f"{super().info()} dengan jari-jari {self.jari_jari} cm"
+
+
+class Segitiga(Bentuk):
+    def __init__(self, alas, tinggi):
+        super().__init__("Segitiga")
+        self.alas = alas
+        self.tinggi = tinggi
+
+    def hitung_luas(self):
+        return 0.5 * self.alas * self.tinggi
+
+    def hitung_keliling(self):
+        # diasumsikan segitiga sama sisi
+        return 3 * self.alas
+
+    def info(self):
+        return f"{super().info()} dengan alas {self.alas} cm dan tinggi {self.tinggi} cm"
+
+
+# =========================
+# PROGRAM UTAMA
+# =========================
+
+def hitung_bentuk():
+    print("=" * 50)
+    print("PROGRAM PENGHITUNG LUAS DAN KELILING BENTUK")
+    print("=" * 50)
+
+    while True:
+        print("\nPilih bentuk:")
+        print("1. Persegi")
+        print("2. Persegi Panjang")
+        print("3. Lingkaran")
+        print("4. Segitiga")
+        print("5. Keluar")
+
+        pilihan = input("Masukkan pilihan (1-5): ")
+
+        try:
+            if pilihan == "1":
+                sisi = float(input("Masukkan sisi: "))
+                b = Persegi(sisi)
+
+            elif pilihan == "2":
+                p = float(input("Masukkan panjang: "))
+                l = float(input("Masukkan lebar: "))
+                b = PersegiPanjang(p, l)
+
+            elif pilihan == "3":
+                r = float(input("Masukkan jari-jari: "))
+                b = Lingkaran(r)
+
+            elif pilihan == "4":
+                a = float(input("Masukkan alas: "))
+                t = float(input("Masukkan tinggi: "))
+                b = Segitiga(a, t)
+
+            elif pilihan == "5":
+                print("Terima kasih 🙌")
+                break
+
+            else:
+                print("Pilihan tidak valid!")
+                continue
+
+            print("\n" + b.info())
+            print(f"Luas      : {b.hitung_luas():.2f}")
+            print(f"Keliling  : {b.hitung_keliling():.2f}")
+
+        except ValueError:
+            print("Input harus berupa angka!")
+
+
+# JALANKAN PROGRAM
+hitung_bentuk()
