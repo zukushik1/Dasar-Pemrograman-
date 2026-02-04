@@ -1,0 +1,16 @@
+class siswa:
+    def __init__(self, nama, kelas):
+        self.nama = nama
+        self.kelas = kelas
+
+    def tampilkan_info(self):
+        print("======================")
+        print("nama :", self.nama)
+        print("kelas :", self.kelas)
+        print("======================")
+
+nama = input("masukkan nama : ")
+kelas = input("masukkan kelas : ")
+
+s1 = siswa(nama, kelas)
+s1.tampilkan_info()
