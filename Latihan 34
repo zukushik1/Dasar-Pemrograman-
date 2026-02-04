@@ -1,0 +1,26 @@
+class Hewan:
+    def suara(self):
+        pass
+
+class Anjing(Hewan):
+    def suara(self):
+        return "Guk Guk!"
+    
+class Kucing(Hewan):
+    def suara(self):
+        return "Meow!"
+    
+def cetak_suara(objek_hewan):
+    print(f"suara hewan : {objek_hewan.suara()}")
+
+jenis = input("Masukkan jenis hewan (anjing/kucing): ").lower()
+if jenis == "anjing":
+    hewan = Anjing()
+    cetak_suara(hewan)
+
+elif jenis == "kucing":
+    hewan = Kucing()
+    cetak_suara(hewan)
+
+else:
+    print("hewan tidak dikenal")
