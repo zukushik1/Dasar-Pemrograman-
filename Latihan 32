@@ -1,0 +1,19 @@
+class mobil: 
+    def __init__(self, merk, warna, tahun):
+        self.merk = merk
+        self.warna = warna
+        self.tahun = tahun
+
+    def tampilkan_info(self):
+        print("===========================")
+        print("merk :", self.merk)
+        print("warna :", self.warna)
+        print("tahun :", self.tahun)
+        print("==========================")
+
+car = input("masukkan merk : ")
+cp = input("masukkan warna : ")
+year = input("masukkan tahun : ")
+
+s1 = mobil(car, cp, year)
+s1.tampilkan_info()
