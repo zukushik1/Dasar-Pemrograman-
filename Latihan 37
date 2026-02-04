@@ -1,0 +1,53 @@
+class RekeningBank:
+    def __init__(self, pemilik, saldo_awal):
+        self.pemilik = pemilik
+        self.__saldo = saldo_awal  # private (enkapsulasi)
+
+    def cek_saldo(self):
+        print(f"\n[INFO] Saldo saat ini: Rp{self.__saldo}")
+
+    def setor_uang(self, jumlah):
+        if jumlah > 0:
+            self.__saldo += jumlah
+            print(f"--- Berhasil menyetor Rp{jumlah} ---")
+            self.cek_saldo()
+        else:
+            print("--- Error: Jumlah harus lebih dari 0! ---")
+
+    def tarik_uang(self, jumlah):
+        if 0 < jumlah <= self.__saldo:
+            self.__saldo -= jumlah
+            print(f"--- Berhasil menarik Rp{jumlah} ---")
+            self.cek_saldo()
+        else:
+            print("--- Error: Saldo tidak cukup atau input salah! ---")
+
+
+# ---- Interaksi User ----
+nama_user = input("Masukkan nama pemilik rekening: ")
+saldo_awal = int(input("Masukkan setoran awal: Rp"))
+
+dompet_digital = RekeningBank(nama_user, saldo_awal)
+
+while True:
+    print(f"\n=== Menu ATM {dompet_digital.pemilik} ===")
+    print("1. Cek Saldo")
+    print("2. Setor Tunai")
+    print("3. Tarik Tunai")
+    print("4. Keluar")
+
+    pilihan = input("Pilih menu (1-4): ")
+
+    if pilihan == '1':
+        dompet_digital.cek_saldo()
+    elif pilihan == '2':
+        nominal = int(input("Masukkan nominal setoran: Rp"))
+        dompet_digital.setor_uang(nominal)
+    elif pilihan == '3':
+        nominal = int(input("Masukkan nominal penarikan: Rp"))
+        dompet_digital.tarik_uang(nominal)
+    elif pilihan == '4':
+        print("Terima kasih telah menggunakan layanan kami.")
+        break
+    else:
+        print("Pilihan tidak valid!")
