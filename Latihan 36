@@ -1,0 +1,29 @@
+class Rekening:
+    def __init__(self, pemilik, saldo):
+        self.pemilik = pemilik
+        self.__saldo = saldo  # atribut private
+
+    # Getter: cara aman melihat saldo
+    def cek_saldo(self):
+        return f"Saldo milik {self.pemilik} adalah Rp{self.__saldo}"
+
+    # Setter: cara aman menambah saldo (dengan validasi)
+    def setor_uang(self, jumlah):
+        if jumlah > 0:
+            self.__saldo += jumlah
+            print(f"Berhasil setor Rp{jumlah}")
+        else:
+            print("Jumlah setoran harus positif!")
+
+# === penggunaan ===
+akun = Rekening("JERI", 1_000_000)
+
+# 1. mencoba akses langsung (akan error)
+# print(akun.__saldo)
+
+# 2. mengakses via Getter
+print(akun.cek_saldo())
+
+# 3. mengubah via setter
+akun.setor_uang(500_000)
+print(akun.cek_saldo())
