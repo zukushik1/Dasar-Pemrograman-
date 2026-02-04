@@ -1,0 +1,16 @@
+class Laptop:
+    def __init__(self, merk, chipset):
+        self.merk = merk
+        self.chipset = chipset
+
+    def tampilkan_info(self):
+        print("======================")
+        print("merk :", self.merk)
+        print("chipset :", self.chipset)
+        print("======================")
+
+merk = input("masukkan merek handphone : ")
+chipset = input("masukkan chipset : ")
+
+s1 = Laptop(merk, chipset)
+s1.tampilkan_info()
